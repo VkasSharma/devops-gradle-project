@@ -3,7 +3,7 @@ pipeline{
     stages {
         stage("sonar quality check"){
             agent{
-                docker{
+                docker {
                     image 'openjdk:11'
                 }
             }
@@ -14,11 +14,6 @@ pipeline{
                         sh './gradlew sonarqube'
                                                       }
                 }
-            }
-        }
-        post{
-            always{
-
             }
         }
     }
